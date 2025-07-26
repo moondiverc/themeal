@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { Heart } from 'lucide-react';
 
 export default function Navbar() {
     return (
@@ -12,6 +13,7 @@ export default function Navbar() {
                 <Link to="/products" className="hover:underline">Products</Link>
                 <Link to="/contact" className="hover:underline">Contact</Link>
             </div>
+            <Link to="/favorites" className="hover:underline"><Heart size={25} className="fill-current text-white" /></Link>
         </div>
     )
 }
