@@ -34,7 +34,9 @@ export default function Products() {
 
     if (loading) {
         return (
-            <div className="text-white text-9xl font-bold flex items-center justify-center h-screen fixed inset-0">
+            <div 
+            className="text-white text-4xl font-bold flex items-center justify-center"
+            style={{height: 'calc(100vh - 80px)'}}>
                 <h1 className="text-center">Loading...</h1>
             </div>
         );
@@ -42,14 +44,14 @@ export default function Products() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <div>
-            <h1>Start Planning Your Meal!</h1>
-            <p>Explore our wide range of delicious meal options.</p>
+        <div className="flex flex-col items-center justify-center p-4">
+            <h1 className="text-4xl font-bold text-white">Start Planning Your <span className="text-amber-400">Meal</span>!</h1>
+            <p className="text-lg text-white">Explore our wide range of delicious meal options.</p>
             <div className="flex justify-center mt-4">
                 <form action="search" className="flex items-center">
-                    <input className="bg-white" type="text" placeholder="Search for meals..." />
+                    <input className="bg-white rounded-l" type="text" placeholder="Search for meals..." />
                     <button type="submit">
-                        <Search size={24} className="text-white bg-amber-400" />
+                        <Search size={24} className="text-white bg-amber-400 rounded-r" />
                     </button>
                 </form>
             </div>
