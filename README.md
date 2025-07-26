@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # React + TypeScript + Vite
 
+TheMeal adalah web berisi list Meal dari berbagai jenis di seluruh dunia
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
