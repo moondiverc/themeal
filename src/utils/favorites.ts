@@ -1,12 +1,12 @@
 import type { ProductProps } from "../types/ProductTypes";
 
-// Get favorites from localStorage
+// ambil data favorite meal dari localStorage
 export const getFavorites = (): ProductProps[] => {
     const saved = localStorage.getItem("liked");
     return saved ? JSON.parse(saved) : [];
 };
 
-// Add meal to favorites
+// add meal ke dalam daftar favorite di localStorage
 export const addToFavorites = (meal: ProductProps): ProductProps[] => {
     const favorites = getFavorites();
     const isAlreadyFavorite = favorites.some(fav => fav.idMeal === meal.idMeal);
@@ -20,21 +20,21 @@ export const addToFavorites = (meal: ProductProps): ProductProps[] => {
     return favorites;
 };
 
-// Remove meal from favorites
-export const removeFromFavorites = (mealId: string): ProductProps[] => {
+// hapus meal dari daftar favorite di localStorage
+export const removeFavorites = (mealId: string): ProductProps[] => {
     const favorites = getFavorites();
     const newFavorites = favorites.filter(fav => fav.idMeal !== mealId);
     localStorage.setItem("liked", JSON.stringify(newFavorites));
     return newFavorites;
 };
 
-// Check if meal is in favorites
+// cek apakah meal ada di daftar favorite
 export const isFavorite = (mealId: string): boolean => {
     const favorites = getFavorites();
     return favorites.some(fav => fav.idMeal === mealId);
 };
 
-// Clear all favorites
-export const clearFavorites = (): void => {
+// bersihkan semua favorite meals dari localStorage
+export const deleteAllFavorites = (): void => {
     localStorage.setItem("liked", JSON.stringify([]));
 };

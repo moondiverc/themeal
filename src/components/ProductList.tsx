@@ -2,39 +2,33 @@ import { Link } from "react-router-dom";
 import type { ProductProps } from "../types/ProductTypes";
 import { Heart } from "lucide-react";
 import { useState, useEffect } from "react";
-import { addToFavorites, removeFromFavorites, isFavorite } from "../utils/favorites";
+import { addToFavorites, removeFavorites, isFavorite } from "../utils/favorites";
 
 export default function ProductList({ items }: { items: ProductProps[] }) {
   const [favorites, setFavorites] = useState<string[]>([]);
 
   useEffect(() => {
-    // Update favorites state when component mounts
+    // menginisialisasi agar favorite meal tersimpan di localStorage
     const updateFavorites = () => {
       const favs = JSON.parse(localStorage.getItem('liked') || '[]');
       setFavorites(favs.map((fav: ProductProps) => fav.idMeal));
     };
     
     updateFavorites();
-    
-    // Listen for storage changes to sync across tabs
-    window.addEventListener('storage', updateFavorites);
-    
-    return () => {
-      window.removeEventListener('storage', updateFavorites);
-    };
   }, []);
 
-  // Update favorites when items change (after search)
+  // setiap items nerubah maka akan mengubah state items
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('liked') || '[]');
     setFavorites(favs.map((fav: ProductProps) => fav.idMeal));
   }, [items]);
 
-  const handleFavoriteToggle = (item: ProductProps) => {
-    const isCurrentlyFavorite = isFavorite(item.idMeal);
-    
-    if (isCurrentlyFavorite) {
-      removeFromFavorites(item.idMeal);
+  // toggle untuk menambah atau menghapus meal dari daftar favorite
+  const toggleFavorite = (item: ProductProps) => {
+    const isNowFavorite = isFavorite(item.idMeal);
+
+    if (isNowFavorite) {
+      removeFavorites(item.idMeal);
       setFavorites(prev => prev.filter(id => id !== item.idMeal));
     } else {
       addToFavorites(item);
@@ -54,10 +48,10 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
             </Link>
             <div className="flex justify-between items-center">
                 <div className="mt-2">
-                    <div className="font-bold text-gray-800">{item.strMeal}</div>
+                    <Link to={`/products/${item.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500">{item.strMeal}</Link>
                     <div className="text-gray-600">{item.strCategory}</div>
                 </div>
-                <button onClick={() => handleFavoriteToggle(item)}>
+                <button onClick={() => toggleFavorite(item)}>
                     <Heart 
                       size={30} 
                       className={`mt-2 cursor-pointer transition-colors ${

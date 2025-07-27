@@ -51,7 +51,7 @@ export default function ProductDetail() {
             <div className="p-8 text-center">
                 <h1 className="text-2xl font-bold text-red-600">Error: {error}</h1>
                 <Link to="/products" className="text-blue-500 underline mt-4 inline-block">
-                    ← Back to Products
+                    Back to Products
                 </Link>
             </div>
         );
@@ -62,19 +62,14 @@ export default function ProductDetail() {
             <div className="p-8 text-center">
                 <h1 className="text-2xl font-bold text-red-600">Meal not found</h1>
                 <Link to="/products" className="text-blue-500 underline mt-4 inline-block">
-                    ← Back to Products
+                    Back to Products
                 </Link>
             </div>
         );
     }
 
     return (
-        <div className="p-8 max-w-4xl mx-auto">
-            {/* Back button */}
-            <Link to="/products" className="bg-amber-400 text-white px-4 py-2 rounded-md mb-6 inline-block">
-                ← Back to Products
-            </Link>
-            
+        <div className="p-8 max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
                     {/* Image */}
@@ -107,27 +102,27 @@ export default function ProductDetail() {
                         )}
                         
                         <div className="mb-6">
-                            <h3 className="font-semibold mb-2">Instructions:</h3>
+                            <h3 className="font-semibold mb-2">Step:</h3>
                             <p className="text-gray-700 leading-relaxed">
                                 {meal.strInstructions}
                             </p>
                         </div>
                         
                         <div className="flex gap-4">
-                            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                                Start Cooking
-                            </button>
+                            <Link to="/products" className="bg-amber-400 text-white px-4 py-2 rounded-md mb-6 inline-block">
+                                Back to Products
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
             
-            {/* Debug Info */}
+            {/* Debug Info
             <div className="mt-8 p-4 bg-gray-100 rounded">
                 <h3 className="font-semibold">Debug Info:</h3>
                 <p>Product ID from URL: {productId}</p>
                 <p>Meal ID: {meal.idMeal}</p>
-            </div>
+            </div> */}
         </div>
     );
 }

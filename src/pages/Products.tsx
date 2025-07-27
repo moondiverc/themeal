@@ -34,10 +34,12 @@ export default function Products() {
         getData(searchQuery);
     };
 
+    // fetch data ketika pertama kali render
     useEffect(() => {
-        getData(); // Load all meals on first render
+        getData();
     }, []);
 
+    // menu ketika loading
     if (loading) {
         return (
             <div 
@@ -48,12 +50,21 @@ export default function Products() {
             </div>
         );
     }
-    
-    if (error) return <div className="text-red-500 text-center p-8">Error: {error}</div>;
+
+    if (error) {
+        return (
+            <div 
+                className="text-white text-4xl font-bold flex items-center justify-center"
+                style={{height: 'calc(100vh - 80px)'}}
+            >
+                <h1 className="text-center">Error: {error}</h1>
+            </div>
+        );
+    }
 
     return (
         <div className="flex flex-col items-center justify-center p-4">
-            <h1 className="text-4xl font-bold text-white">Start Planning Your <span className="text-amber-400">Meal</span>!</h1>
+            <h1 className="text-4xl font-bold text-white text-shadow-2xs">Start Planning Your <span className="text-amber-400">Meal</span>!</h1>
             <p className="text-lg text-white">Explore our wide range of delicious meal options.</p>
             
             <div className="flex justify-center mt-4">
