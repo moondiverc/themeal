@@ -21,7 +21,8 @@ export default function ProductDetail() {
                 }
                 
                 const data = await response.json();
-                setMeal(data.meals?.[0] || null);
+                const mealData = data.meals?.[0] || null;
+                setMeal(mealData);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'An error occurred');
             } finally {
@@ -113,9 +114,6 @@ export default function ProductDetail() {
                         </div>
                         
                         <div className="flex gap-4">
-                            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
-                                Add to Favorites
-                            </button>
                             <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
                                 Start Cooking
                             </button>
