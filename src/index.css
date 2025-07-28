@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
 body {
-  background: linear-gradient(to bottom right, #fdf2f8, #ffedd6, #f9c98a);
+  background: linear-gradient(to bottom right, #fdf2f8, #fff0dd, #f9c37d);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-fill-forwards {
+  animation-fill-mode: forwards;
 }

@@ -56,16 +56,22 @@ export default function Favorites() {
                 )}
             </div>
 
-            <div className="flex flex-wrap gap-10 m-4 items-start">
+            <div className="flex flex-wrap gap-10 m-4 items-start justify-center">
                 {liked.map((meal) => (
-                    <div key={meal.idMeal} className="bg-white p-4 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div key={meal.idMeal} className="bg-white p-4 flex flex-col rounded-lg shadow-md hover:shadow-lg transition-shadow w-[250px]">
                         <Link to={`/products/${meal.idMeal}`}>
-                            <div className="overflow-hidden w-[200px] h-[200px] bg-center bg-cover rounded-lg" style={{ backgroundImage: `url(${meal.strMealThumb})`}}></div>
+                            <div className="overflow-hidden w-full h-[200px] bg-center bg-cover rounded-lg" style={{ backgroundImage: `url(${meal.strMealThumb})`}}></div>
                         </Link>
                         <div className="flex justify-between items-center">
-                            <div className="mt-2">
-                                <Link to={`/products/${meal.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500">{meal.strMeal}</Link>
-                                <div className="text-gray-600">{meal.strCategory}</div>
+                            <div className="flex-1 min-w-0 mr-2 mt-2">
+                                <Link to={`/products/${meal.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500 block">
+                                    <h3 className="truncate leading-tight" title={meal.strMeal}>
+                                        {meal.strMeal}
+                                    </h3>
+                                </Link>
+                                <div className="text-gray-600 truncate" title={meal.strCategory}>
+                                    {meal.strCategory}
+                                </div>
                             </div>
                             <button 
                                 onClick={() => removeFavorite(meal.idMeal)}
