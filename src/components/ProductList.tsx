@@ -40,21 +40,25 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
     <div>
       <div className="flex flex-wrap gap-10 m-4 items-start justify-center">
         {items.map((item) => (
-          <div key={item.idMeal} className="bg-white p-4 flex flex-col rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <Link 
-              to={`/products/${item.idMeal}`}
-            >
-              <div className="overflow-hidden w-[200px] h-[200px] bg-center bg-cover rounded-lg" style={{ backgroundImage: `url(${item.strMealThumb})`}}></div>
+          <div key={item.idMeal} className="bg-white p-4 flex flex-col rounded-lg shadow-md hover:shadow-lg transition-shadow w-[250px]">
+            <Link to={`/products/${item.idMeal}`}>
+              <div className="overflow-hidden w-full h-[200px] bg-center bg-cover rounded-lg" style={{ backgroundImage: `url(${item.strMealThumb})`}}></div>
             </Link>
-            <div className="flex justify-between items-center">
-                <div className="mt-2">
-                    <Link to={`/products/${item.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500">{item.strMeal}</Link>
-                    <div className="text-gray-600">{item.strCategory}</div>
+            <div className="flex justify-between items-start mt-2">
+                <div className="flex-1 min-w-0 mr-2 mt-2">
+                    <Link to={`/products/${item.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500 block">
+                      <h3 className="truncate leading-tight" title={item.strMeal}>
+                        {item.strMeal}
+                      </h3>
+                    </Link>
+                    <div className="text-gray-600 truncate" title={item.strCategory}>
+                      {item.strCategory}
+                    </div>
                 </div>
-                <button onClick={() => toggleFavorite(item)}>
+                <button onClick={() => toggleFavorite(item)} className="flex-shrink-0">
                     <Heart 
-                      size={30} 
-                      className={`mt-2 cursor-pointer transition-colors ${
+                      size={26} 
+                      className={`cursor-pointer transition-colors ${
                         favorites.includes(item.idMeal) 
                           ? 'fill-red-500 text-red-500' 
                           : 'text-gray-400 hover:text-red-500'

@@ -24,15 +24,16 @@ export default function Favorites() {
     if (liked.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center p-8" style={{minHeight: 'calc(100vh - 80px)'}}>
-                <Heart size={64} className="text-gray-400 mb-4" />
-                <h1 className="text-3xl font-bold text-white mb-2">No Favorite Meals Yet</h1>
-                <p className="text-gray-300 mb-6 text-center">Start exploring meals and add them to your favorites!</p>
-                <Link 
-                    to="/products" 
-                    className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
-                    Explore Meals
-                </Link>
+                <div className="text-center mb-6 bg-white p-8 rounded-2xl shadow-lg">
+                    <h1 className="text-3xl font-bold text-black mb-2">No Favorite Meals Yet!</h1>
+                    <p className="text-gray-500 mb-6 text-center">Start exploring meals and add them to your favorites!</p>
+                    <Link 
+                        to="/products" 
+                        className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                    >
+                        Explore Meals
+                    </Link>
+                </div>
             </div>
         );
     }
@@ -55,30 +56,22 @@ export default function Favorites() {
                 )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="flex flex-wrap gap-10 m-4 items-start">
                 {liked.map((meal) => (
-                    <div key={meal.idMeal} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                        <Link to={`/products/${meal.idMeal}`} className="block">
-                            <img 
-                                src={meal.strMealThumb} 
-                                alt={meal.strMeal}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="font-bold text-gray-800 mb-2">{meal.strMeal}</h3>
-                                <p className="text-gray-600 text-sm mb-2">{meal.strCategory}</p>
-                                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
-                                    {meal.strArea}
-                                </span>
-                            </div>
+                    <div key={meal.idMeal} className="bg-white p-4 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <Link to={`/products/${meal.idMeal}`}>
+                            <div className="overflow-hidden w-[200px] h-[200px] bg-center bg-cover rounded-lg" style={{ backgroundImage: `url(${meal.strMealThumb})`}}></div>
                         </Link>
-                        <div className="p-4 pt-0">
+                        <div className="flex justify-between items-center">
+                            <div className="mt-2">
+                                <Link to={`/products/${meal.idMeal}`} className="font-bold text-gray-800 hover:text-amber-500">{meal.strMeal}</Link>
+                                <div className="text-gray-600">{meal.strCategory}</div>
+                            </div>
                             <button 
                                 onClick={() => removeFavorite(meal.idMeal)}
-                                className="w-full bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                                className="mt-2 cursor-pointer transition-colors"
                             >
-                                <Heart size={18} className="fill-current" />
-                                Remove from Favorites
+                                <Heart size={30} className="fill-current text-red-500" />
                             </button>
                         </div>
                     </div>
