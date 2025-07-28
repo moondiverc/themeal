@@ -3,7 +3,7 @@ import bgFood from '../assets/bg-food-4.jpg'
 
 export default function Home() {
     return (
-        <div style={{ height: "3000px" }}>
+        <div style={{ height: "200vh" }}>
             <div 
             style={{
                 backgroundImage: `url(${bgFood})`,
@@ -28,32 +28,24 @@ export default function Home() {
                 </div>
             </div>
 
-
-                    <div className="flex justify-center py-5">
-            <div className="max-w-4xl px-4 text-center justify-centerbg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-                <div>
-                    <h1 className="text-3xl font-bold text-gray-800 mb-4">About Us</h1>
-                    <p className="text-lg text-gray-600 mb-6">We are a company dedicated to providing the best service possible.</p>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6 mb-4 flex-wrap text-center">
-                    {/* 1 */}
-                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
-                        <h2>Most Complete Meal</h2>
-                        <p className="text-gray-600">Explore our wide range of meals that cater to all tastes and preferences.</p>
+            {/* testimonial */}
+            <div>
+                <h1>Testimonials</h1>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                    <div className='bg-white p-4 rounded-lg shadow-md'>
+                        <p className='text-gray-600'>"TheMeal has changed the way I cook!"</p>
+                        <p className='text-gray-500 text-sm'>- Happy Customer</p>
                     </div>
-                    {/* 2 */}
-                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
-                        <h2>Best Value Meal</h2>
-                        <p className="text-gray-600">Get the most bang for your buck with our best value meal options.</p>
+                    <div className='bg-white p-4 rounded-lg shadow-md'>
+                        <p className='text-gray-600'>"I love the variety of recipes available."</p>
+                        <p className='text-gray-500 text-sm'>- Satisfied User</p>
                     </div>
-                    {/* 3 */}
-                    <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
-                        <h2>Quick Meal</h2>
-                        <p className="text-gray-600">Satisfy your hunger in no time with our quick meal options.</p>
+                    <div className='bg-white p-4 rounded-lg shadow-md'>
+                        <p className='text-gray-600'>"TheMeal makes cooking fun and easy!"</p>
+                        <p className='text-gray-500 text-sm'>- Cooking Enthusiast</p>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     )
 }

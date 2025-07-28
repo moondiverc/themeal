@@ -58,7 +58,7 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
                 <button onClick={() => toggleFavorite(item)} className="flex-shrink-0">
                     <Heart 
                       size={30} 
-                      className={`mt-2 cursor-pointer transition-colors ${
+                      className={`mt-3 cursor-pointer transition-colors ${
                         favorites.includes(item.idMeal) 
                           ? 'fill-red-500 text-red-500' 
                           : 'text-gray-400 hover:text-red-500'
