@@ -21,10 +21,22 @@ export default function Navbar() {
                     <img src={logo} alt="Logo" width={40} height={40} className="md:w-[50px] md:h-[50px]" />
                     <Link to="/" className="font-bold text-2xl md:text-3xl text-white">TheMeal</Link>
                     <div className="hidden lg:flex gap-x-6 xl:gap-x-10 justify-center w-full font-bold text-lg text-white">
-                        <Link to="/" className="hover:underline transition-all duration-200">Home</Link>
-                        <Link to="/about" className="hover:underline transition-all duration-200">About</Link>
-                        <Link to="/products" className="hover:underline transition-all duration-200">Products</Link>
-                        <Link to="/contact" className="hover:underline transition-all duration-200">Contact</Link>
+                        <Link to="/" className="relative group transition-all duration-300">
+                            <span>Home</span>
+                            <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
+                        </Link>
+                        <Link to="/about" className="relative group transition-all duration-300">
+                            <span>About</span>
+                            <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
+                        </Link>
+                        <Link to="/products" className="relative group transition-all duration-300">
+                            <span>Products</span>
+                            <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
+                        </Link>
+                        <Link to="/contact" className="relative group transition-all duration-300">
+                            <span>Contact</span>
+                            <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
+                        </Link>
                     </div>
                     
                     {/* desktop */}

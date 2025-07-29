@@ -32,7 +32,7 @@ export default function Home() {
             </div>
 
             {/* testimonial */}
-            <div className="py-16 flex items-center">
+            <div className="py-30 flex items-center" style={{ paddingInline: '10%' }}>
                 <div className="max-w-6xl mx-auto px-4 w-full">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h1>

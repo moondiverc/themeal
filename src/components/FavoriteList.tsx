@@ -23,7 +23,7 @@ export default function Favorites() {
 
     if (liked.length === 0) {
         return (
-            <div className="flex flex-col items-center justify-center p-8" style={{minHeight: 'calc(100vh - 80px)'}}>
+            <div className="flex flex-col items-center justify-center p-8 pt-30" style={{minHeight: 'calc(100vh - 80px)'}}>
                 <div className="text-center mb-6 bg-white p-8 rounded-2xl shadow-lg">
                     <h1 className="text-3xl font-bold text-black mb-2">No Favorite Meals Yet!</h1>
                     <p className="text-gray-500 mb-6 text-center">Start exploring meals and add them to your favorites!</p>
@@ -42,7 +42,7 @@ export default function Favorites() {
         <div className="p-8 pt-30" style={{ paddingInline: '5%' }}>
             <div className="flex justify-between items-center mb-6">
                 <div>
-                    <h1 className="text-3xl font-bold text-white">My Favorite Meals</h1>
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">My Favorite Meals</h1>
                     <p className="text-gray-300">You have {liked.length} favorite meal{liked.length !== 1 ? 's' : ''}</p>
                 </div>
                 {liked.length > 0 && (

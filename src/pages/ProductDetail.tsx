@@ -102,7 +102,7 @@ export default function ProductDetail() {
                         )}
                         
                         <div className="mb-6">
-                            <h3 className="font-semibold mb-2">Step:</h3>
+                            <h3 className="font-semibold mb-2">Instruction:</h3>
                             <p className="text-gray-700 leading-relaxed">
                                 {meal.strInstructions}
                             </p>

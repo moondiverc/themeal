@@ -4,12 +4,12 @@ import logo from '../assets/logo.png';
 
 export default function About() {
     return (
-        <div style={{padding: "0 3%"}}>
+        <div style={{padding: "0 8%"}}>
             {/* about TheMeal */}
             <div className="flex justify-center p-10 pt-30 gap-10">
-                <div className="max-w-4xl px-4 justify-center flex items-center gap-10">
-                    <img src={logo} alt="About TheMeal" className="shadow-2xl rounded-full p-20" width={500}/>
-                    <div>
+                <div className="max-w-5xl px-4 justify-center flex flex-col lg:flex-row items-center gap-10">
+                    <img src={logo} alt="About TheMeal" className="shadow-2xl rounded-full p-20 w-full max-w-[400px] lg:max-w-[500px]" width={500}/>
+                    <div className="text-center lg:text-left">
                         <h1 className="text-2xl font-bold">About TheMeal</h1>
                         <p>We are a company dedicated to providing the best meal experiences.</p>
                         <p>Our mission is to bring delicious meals to your table with the highest quality ingredients and exceptional service.</p>
