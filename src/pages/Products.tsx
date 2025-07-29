@@ -63,7 +63,7 @@ export default function Products() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center p-4">
+        <div className="flex flex-col items-center justify-center p-4 pt-30">
             <h1 className="text-4xl font-bold text-white text-shadow-2xs">Start Planning Your <span className="text-amber-400">Meal</span>!</h1>
             <p className="text-lg text-white">Explore our wide range of delicious meal options.</p>
             

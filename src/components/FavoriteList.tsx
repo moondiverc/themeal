@@ -39,7 +39,7 @@ export default function Favorites() {
     }
 
     return (
-        <div className="p-8">
+        <div className="p-8 pt-30" style={{ paddingInline: '5%' }}>
             <div className="flex justify-between items-center mb-6">
                 <div>
                     <h1 className="text-3xl font-bold text-white">My Favorite Meals</h1>
@@ -56,7 +56,7 @@ export default function Favorites() {
                 )}
             </div>
 
-            <div className="flex flex-wrap gap-10 m-4 items-start justify-center">
+            <div className="flex flex-wrap gap-8 m-2 items-start">
                 {liked.map((meal) => (
                     <div key={meal.idMeal} className="bg-white p-4 flex flex-col rounded-lg shadow-md hover:shadow-lg transition-shadow w-[250px]">
                         <Link to={`/products/${meal.idMeal}`}>

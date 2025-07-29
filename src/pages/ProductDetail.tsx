@@ -69,7 +69,7 @@ export default function ProductDetail() {
     }
 
     return (
-        <div className="p-8 max-w-6xl mx-auto">
+        <div className="p-8 max-w-6xl mx-auto pt-30">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
                     {/* Image */}
@@ -116,13 +116,6 @@ export default function ProductDetail() {
                     </div>
                 </div>
             </div>
-            
-            {/* Debug Info
-            <div className="mt-8 p-4 bg-gray-100 rounded">
-                <h3 className="font-semibold">Debug Info:</h3>
-                <p>Product ID from URL: {productId}</p>
-                <p>Meal ID: {meal.idMeal}</p>
-            </div> */}
         </div>
     );
 }

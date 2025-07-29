@@ -3,17 +3,17 @@ import bgFood from '../assets/bg-food-4.jpg'
 
 export default function Home() {
     return (
-        <div style={{ height: "200vh" }}>
+        <div>
             <div 
             style={{
                 backgroundImage: `url(${bgFood})`,
                 backgroundSize: 'cover',
-                backgroundPosition: '10% 90%',
+                backgroundPosition: '0% 80%',
                 backgroundRepeat: 'no-repeat',
                 alignItems: 'center',
                 position: 'relative',
                 display: 'flex',
-                minHeight: 'calc(100vh - 80px)',
+                minHeight: '100vh',
             }}>
                 <div className="py-5 px-[7%] max-w-240">
                     <h1 className="text-5xl font-bold text-amber-50 text-shadow-md animate-fade-in opacity-0 animation-fill-forwards">
@@ -28,24 +28,6 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* testimonial */}
-            <div>
-                <h1>Testimonials</h1>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                    <div className='bg-white p-4 rounded-lg shadow-md'>
-                        <p className='text-gray-600'>"TheMeal has changed the way I cook!"</p>
-                        <p className='text-gray-500 text-sm'>- Happy Customer</p>
-                    </div>
-                    <div className='bg-white p-4 rounded-lg shadow-md'>
-                        <p className='text-gray-600'>"I love the variety of recipes available."</p>
-                        <p className='text-gray-500 text-sm'>- Satisfied User</p>
-                    </div>
-                    <div className='bg-white p-4 rounded-lg shadow-md'>
-                        <p className='text-gray-600'>"TheMeal makes cooking fun and easy!"</p>
-                        <p className='text-gray-500 text-sm'>- Cooking Enthusiast</p>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
