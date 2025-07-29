@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import bgFood from '../assets/bg-food-4.jpg'
+import people1 from '../assets/people1.jpg'
+import people2 from '../assets/people2.jpg'
+import people3 from '../assets/people3.jpg'
 
 export default function Home() {
     return (
@@ -28,6 +31,74 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* testimonial */}
+            <div className="py-16 flex items-center">
+                <div className="max-w-6xl mx-auto px-4 w-full">
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h1>
+                        <p className="text-xl text-gray-600">Hear from people who love TheMeal</p>
+                    </div>
+                    
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                        {/* testi 1 */}
+                        <div className='bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                            <div className="flex items-center mb-4">
+                                <img 
+                                    src={people1} 
+                                    alt="Customer 1" 
+                                    className="w-16 h-16 rounded-full object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="font-semibold text-gray-800">Blair Waldorf</h3>
+                                    <p className="text-gray-500 text-sm">Businesswoman</p>
+                                </div>
+                            </div>
+                            <p className='text-gray-600 italic mb-4'>"I already tried lots of recipe in TheMeal and they are all tastes GREAT! I always recommend it to my friends."</p>
+                            <div className="flex text-amber-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        
+                        {/* testi 2 */}
+                        <div className='bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                            <div className="flex items-center mb-4">
+                                <img 
+                                    src={people2} 
+                                    alt="Customer 2" 
+                                    className="w-16 h-16 rounded-full object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="font-semibold text-gray-800">Serena Van Der Wodsen</h3>
+                                    <p className="text-gray-500 text-sm">Home Chef</p>
+                                </div>
+                            </div>
+                            <p className='text-gray-600 italic mb-4'>"I thought I wouldn't find my country recipes, but TheMeal has it all! I hope they keep expanding their recipes collection."</p>
+                            <div className="flex text-amber-500">
+                                ⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        
+                        {/* testi 3 */}
+                        <div className='bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow'>
+                            <div className="flex items-center mb-4">
+                                <img 
+                                    src={people3} 
+                                    alt="Customer 3" 
+                                    className="w-16 h-16 rounded-full object-cover mr-4"
+                                />
+                                <div>
+                                    <h3 className="font-semibold text-gray-800">Chuck Bass</h3>
+                                    <p className="text-gray-500 text-sm">Software Engineer</p>
+                                </div>
+                            </div>
+                            <p className='text-gray-600 italic mb-4'>"The meal has best recipes and I love how easy they are to make! Especially for someone busy like me!"</p>
+                            <div className="flex text-amber-500">
+                                ⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
