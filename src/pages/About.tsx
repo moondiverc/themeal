@@ -1,25 +1,95 @@
-import { BookOpenIcon, Globe, UtensilsCrossedIcon } from "lucide-react"
-import logo from '../assets/logo.png';
-
+import { BookOpenIcon, Globe, UtensilsCrossedIcon, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react"
+import bgFood1 from '../assets/bg-food-1.jpg'
+import bgFood2 from '../assets/bg-food-2.jpg'
+import bgFood3 from '../assets/bg-food-3.jpg'
+import bgFood4 from '../assets/bg-food-4.jpg'
+import bgFood5 from '../assets/bg-food-5.jpg'
 
 export default function About() {
+    // Array foto makanan dari assets lokal
+    const foodImages = [
+        bgFood1,
+        bgFood2,
+        bgFood3,
+        bgFood4,
+        bgFood5
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // auto-slide
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % foodImages.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [foodImages.length]);
+
+    // fungsi untuk navigasi ke next
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % foodImages.length);
+    };
+
+    // fungsi untuk navigasi ke previous
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + foodImages.length) % foodImages.length);
+    };
+
     return (
         <div style={{padding: "0 8%"}}>
             {/* about TheMeal */}
             <div className="flex justify-center p-10 pt-30 gap-10">
                 <div className="max-w-5xl px-4 justify-center flex flex-col lg:flex-row items-center gap-10">
-                    <img src={logo} alt="About TheMeal" className="shadow-2xl rounded-full p-20 w-full max-w-[400px] lg:max-w-[500px]" width={500}/>
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-2xl font-bold">About TheMeal</h1>
-                        <p>We are a company dedicated to providing the best meal experiences.</p>
-                        <p>Our mission is to bring delicious meals to your table with the highest quality ingredients and exceptional service.</p>
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent pb-4">About TheMeal</h1>
+                        <p className="text-lg text-gray-400">We are a company dedicated to providing the best meal experiences.</p>
+                        <p className="text-lg text-gray-400">Our mission is to bring delicious meals to your table with the highest quality ingredients and exceptional service.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* carousel */}
+            <div className="flex justify-center py-8">
+                <div className="max-w-4xl px-4 w-full">
+                    <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                        {/* caontainer */}
+                        <div 
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        >
+                            {foodImages.map((image, index) => (
+                                <div key={index} className="w-full flex-shrink-0">
+                                    <img 
+                                        src={image} 
+                                        alt={`Delicious meal ${index + 1}`}
+                                        className="w-full h-64 md:h-80 object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* navigation */}
+                        <button 
+                            onClick={prevSlide}
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button 
+                            onClick={nextSlide}
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
                     </div>
                 </div>
             </div>
 
             {/* more about us */}
             <div className="flex justify-center py-5">
-                <div className="max-w-4xl px-4 text-center justify-center             bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+                <div className="max-w-4xl px-4 text-center justify-center bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                     <div>
                         <h1 className="text-3xl font-bold text-gray-800 mb-4">More About Us</h1>
                         <p className="text-lg text-gray-600 mb-6">We are a company dedicated to providing the best service possible.</p>

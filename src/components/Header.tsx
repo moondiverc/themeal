@@ -75,7 +75,7 @@ export default function Navbar() {
                     />
                     
                     {/* sidebar */}
-                    <div className="fixed top-24 right-4 w-64 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm z-50 lg:hidden transform transition-all duration-300 ease-out">        
+                    <div className="fixed top-24 right-4 w-64 bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 rounded-3xl shadow-2xl border border-white/20 backdrop-blur-sm z-50 lg:hidden transform transition-all duration-300 ease-out">        
                         {/*  menu di sidebar */}
                         <div className="p-4 space-y-3">
                             <Link to="/" onClick={closeMenu}
