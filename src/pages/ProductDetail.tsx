@@ -72,7 +72,6 @@ export default function ProductDetail() {
         <div className="p-8 max-w-6xl mx-auto pt-30">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
-                    {/* Image */}
                     <div className="md:w-1/2">
                         <img 
                             src={meal.strMealThumb} 
@@ -81,7 +80,7 @@ export default function ProductDetail() {
                         />
                     </div>
                     
-                    {/* Content */}
+                    {/* content */}
                     <div className="md:w-1/2 p-6">
                         <h1 className="text-3xl font-bold mb-4">{meal.strMeal}</h1>
                         
@@ -106,6 +105,18 @@ export default function ProductDetail() {
                             <p className="text-gray-700 leading-relaxed">
                                 {meal.strInstructions}
                             </p>
+                        </div>
+
+                        <div className="mb-6">
+                            <h3 className="font-semibold mb-2">Tutorial:</h3>
+                            <a 
+                                href={meal.strYoutube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-700 leading-relaxed cursor-pointer hover:text-amber-500 hover:underline"
+                            >
+                                {meal.strYoutube}
+                            </a>
                         </div>
                         
                         <div className="flex gap-4">

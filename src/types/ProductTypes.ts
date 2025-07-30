@@ -6,6 +6,7 @@ export interface ProductProps {
   strArea: string;
   strInstructions?: string;
   strTags?: string;
+  strYoutube?: string;
 }
 
 export interface MenuProps {
