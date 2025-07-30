@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <main>
       <div className="py-4 h-20 text-black flex px-4 items-center justify-center fixed top-0 left-0 w-full z-50 pt-15">
         <div className="bg-amber-500/90 backdrop-blur-sm border border-white/20 rounded-3xl max-w-6xl w-full flex items-center justify-between shadow-2xl px-6 md:px-10 h-16">
           <img
@@ -140,6 +140,6 @@ export default function Navbar() {
           </div>
         </>
       )}
-    </>
+    </main>
   );
 }

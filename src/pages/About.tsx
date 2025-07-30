@@ -49,7 +49,7 @@ export default function About() {
   };
 
   return (
-    <div style={{ padding: "0 8%" }}>
+    <main style={{ padding: "0 8%" }}>
       {/* about TheMeal */}
       <div className="flex justify-center pb-5 pt-30 gap-10">
         <div className="max-w-5xl px-4 justify-center flex flex-col lg:flex-row items-center gap-10">
@@ -111,7 +111,7 @@ export default function About() {
         <div className="max-w-4xl px-4 text-center justify-center bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
           <div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">
-              Why Choose Us?
+              Why Choose TheMeal?
             </h1>
             <p className="text-lg text-gray-600 mb-6">
               We are a company dedicated to providing the best service possible.
@@ -150,6 +150,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

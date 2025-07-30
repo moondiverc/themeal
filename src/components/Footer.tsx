@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="h-20 text-black flex px-4 items-center justify-center">
+    <main className="h-20 text-black flex px-4 items-center justify-center">
       <div className="bg-amber-500/90 backdrop-blur-sm border border-white/20 h-15 rounded-3xl max-w-6xl w-full flex items-center justify-between shadow-2xl px-10">
         <p>
           &copy; 2025{" "}
@@ -15,6 +15,6 @@ export default function Footer() {
           . All rights reserved.
         </p>
       </div>
-    </div>
+    </main>
   );
 }

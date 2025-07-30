@@ -11,8 +11,8 @@ import {
 export default function ProductList({ items }: { items: ProductProps[] }) {
   const [favorites, setFavorites] = useState<string[]>([]);
 
+  // setiap kali render, ambil data favorite meals dari localStorage
   useEffect(() => {
-    // menginisialisasi agar favorite meal tersimpan di localStorage
     const updateFavorites = () => {
       const favs = JSON.parse(localStorage.getItem("liked") || "[]");
       setFavorites(favs.map((fav: ProductProps) => fav.idMeal));
@@ -21,7 +21,7 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
     updateFavorites();
   }, []);
 
-  // setiap items nerubah maka akan mengubah state items
+  // setiap items berubah maka akan mengubah state items
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("liked") || "[]");
     setFavorites(favs.map((fav: ProductProps) => fav.idMeal));
@@ -41,7 +41,7 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
   };
 
   return (
-    <div>
+    <main>
       <div className="flex flex-wrap gap-10 m-4 items-start justify-center">
         {items.map((item) => (
           <div
@@ -88,6 +88,6 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

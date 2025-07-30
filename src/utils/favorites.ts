@@ -35,6 +35,6 @@ export const isFavorite = (mealId: string): boolean => {
 };
 
 // bersihkan semua favorite meals dari localStorage
-export const deleteAllFavorites = (): void => {
+export const clearAllFavorites = (): void => {
   localStorage.setItem("liked", JSON.stringify([]));
 };

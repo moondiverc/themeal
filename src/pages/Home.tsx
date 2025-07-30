@@ -6,7 +6,8 @@ import people3 from "../assets/people3.jpg";
 
 export default function Home() {
   return (
-    <div>
+    <main>
+      {/* landing page */}
       <div
         style={{
           backgroundImage: `url(${bgFood})`,
@@ -115,6 +116,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

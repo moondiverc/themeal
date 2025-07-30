@@ -19,6 +19,7 @@ export default function Products() {
     };
   }, []);
 
+  // fungsi ambil data dari API
   const getData = async (query: string = "") => {
     try {
       setLoading(true);
@@ -39,6 +40,7 @@ export default function Products() {
     }
   };
 
+  // fungsi untuk menangani pencarian (mencari meal)
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     getData(searchQuery);
@@ -64,7 +66,7 @@ export default function Products() {
     getData();
   }, []);
 
-  // menu ketika loading
+  // page ketika loading
   if (loading) {
     return (
       <div
@@ -76,7 +78,7 @@ export default function Products() {
     );
   }
 
-  // menu ketika error
+  // page ketika error
   if (error) {
     return (
       <div
@@ -89,7 +91,8 @@ export default function Products() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 pt-30">
+    <main className="flex flex-col items-center justify-center p-4 pt-30">
+      {/* title */}
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent text-center leading-tight pb-1">
         Start Planning Your Meal!
       </h1>
@@ -97,6 +100,7 @@ export default function Products() {
         Explore our wide range of delicious meal recipes.
       </p>
 
+      {/* search form dan button sorting */}
       <div className="flex justify-center gap-2 sm:gap-4 px-4 sm:px-8 md:px-16 lg:px-20 w-full max-w-2xl">
         <form
           onSubmit={handleSearch}
@@ -128,10 +132,12 @@ export default function Products() {
           </span>
         </button>
       </div>
+
+      {/* jika meal tidak ditemukan */}
       {items.length === 0 && !loading && !error && (
-        <div className="text-white text-lg mt-4">No meals found.</div>
+        <div className="text-gray-500 text-lg mt-4">No meals found.</div>
       )}
       <ProductList items={items} />
-    </div>
+    </main>
   );
 }

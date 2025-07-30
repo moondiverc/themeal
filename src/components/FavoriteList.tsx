@@ -4,23 +4,28 @@ import { Heart, Trash2 } from "lucide-react";
 import type { ProductProps } from "../types/ProductTypes";
 
 export default function Favorites() {
+  // ambil data favorite meals dari localStorage
   const [liked, setLiked] = useState<ProductProps[]>(() => {
     const savedLiked = localStorage.getItem("liked");
     return savedLiked ? JSON.parse(savedLiked) : [];
   });
 
+  // setiap kali liked berubah, simpan ke localStorage
   useEffect(() => {
     localStorage.setItem("liked", JSON.stringify(liked));
   }, [liked]);
 
+  // hapus meal dari daftar favorite
   const removeFavorite = (mealId: string) => {
     setLiked((prev) => prev.filter((item) => item.idMeal !== mealId));
   };
 
+  // bersihkan semua favorite meals
   const clearAllFavorites = () => {
     setLiked([]);
   };
 
+  // jika tidak ada favorite meals
   if (liked.length === 0) {
     return (
       <div
@@ -46,27 +51,27 @@ export default function Favorites() {
   }
 
   return (
-    <div className="p-8 pt-30" style={{ paddingInline: "5%" }}>
+    <main className="p-8 pt-30" style={{ paddingInline: "5%" }}>
+      {/* title & clear button */}
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">
             My Favorite Meals
           </h1>
-          <p className="text-gray-300">
+          <p className="text-gray-400">
             You have {liked.length} favorite meal{liked.length !== 1 ? "s" : ""}
           </p>
         </div>
-        {liked.length > 0 && (
-          <button
-            onClick={clearAllFavorites}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
-          >
-            <Trash2 size={20} />
-            Clear All
-          </button>
-        )}
+        <button
+          onClick={clearAllFavorites}
+          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+        >
+          <Trash2 size={20} />
+          Clear All
+        </button>
       </div>
 
+      {/* favorite list */}
       <div className="flex flex-wrap gap-8 m-2 items-start">
         {liked.map((meal) => (
           <div
@@ -106,6 +111,6 @@ export default function Favorites() {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

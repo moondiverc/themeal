@@ -8,6 +8,7 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // setiap productId berubah ambil meal detail dari API
   useEffect(() => {
     const getMealDetail = async () => {
       try {
@@ -35,6 +36,7 @@ export default function ProductDetail() {
     }
   }, [productId]);
 
+  // page ketika loading
   if (loading) {
     return (
       <div
@@ -46,20 +48,19 @@ export default function ProductDetail() {
     );
   }
 
+  // page ketika error
   if (error) {
     return (
-      <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-red-600">Error: {error}</h1>
-        <Link
-          to="/products"
-          className="text-blue-500 underline mt-4 inline-block"
-        >
-          Back to Products
-        </Link>
+      <div
+        className="text-white text-4xl font-bold flex items-center justify-center"
+        style={{ height: "calc(100vh - 80px)" }}
+      >
+        <h1>Error: {error}</h1>
       </div>
     );
   }
 
+  // jika meal tidak ditemukan
   if (!meal) {
     return (
       <div
@@ -85,7 +86,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="p-8 max-w-6xl mx-auto pt-30">
+    <main className="p-8 max-w-6xl mx-auto pt-30">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="md:flex">
           <div className="md:w-1/2">
@@ -99,7 +100,6 @@ export default function ProductDetail() {
           {/* content */}
           <div className="md:w-1/2 p-6">
             <h1 className="text-3xl font-bold mb-4">{meal.strMeal}</h1>
-
             <div className="mb-4">
               <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold mr-2">
                 {meal.strCategory}
@@ -108,14 +108,13 @@ export default function ProductDetail() {
                 {meal.strArea}
               </span>
             </div>
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2">
+                Tags: {meal.strTags ? meal.strTags : "-"}
+              </h3>
+            </div>
 
-            {meal.strTags && (
-              <div className="mb-4">
-                <h3 className="font-semibold mb-2">Tags:</h3>
-                <p className="text-gray-600">{meal.strTags}</p>
-              </div>
-            )}
-
+            {/* instruksi */}
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Instruction:</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -123,6 +122,7 @@ export default function ProductDetail() {
               </p>
             </div>
 
+            {/* youtube tutorial */}
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Tutorial:</h3>
               <a
@@ -135,6 +135,7 @@ export default function ProductDetail() {
               </a>
             </div>
 
+            {/* back to product page */}
             <div className="flex gap-4">
               <Link
                 to="/products"
@@ -146,6 +147,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -17,6 +17,7 @@ export default function Contact() {
       style={{ paddingInline: "5%" }}
     >
       <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center px-8 py-4 shadow-lg max-w-2xl  mx-4">
+        {/* title */}
         <div className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-2">
           Contact Us!
         </div>
@@ -24,8 +25,9 @@ export default function Contact() {
           We'd love to hear from you. Get in touch with us!
         </div>
 
+        {/* contact details */}
         <div className="grid md:grid-cols-2 gap-6 mb-4">
-          {/* WhatsApp */}
+          {/* wa */}
           <div className="bg-white/60 rounded-lg p-6 hover:bg-white/80 transition-colors shadow-sm">
             <div className="flex items-center justify-center mb-3">
               <MessageCircle className="text-green-500" size={32} />
