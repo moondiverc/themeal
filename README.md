@@ -1,7 +1,9 @@
 <<<<<<< HEAD
 # TheMeal
 
-TheMeal adalah web yang menyajikan berbagai makanan dan resep paling lengkap di seluruh dunia.
+TheMeal adalah website yang menyajikan berbagai makanan dan resep paling lengkap dari seluruh dunia. Website ini dibangun menggunakan Next.js (React Framework) dan ditulis dengan JavaScript serta Tailwind CSS untuk styling. Data resep diambil dari www.themealdb.com secara real-time.
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
