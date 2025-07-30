@@ -90,17 +90,20 @@ export default function Products() {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 pt-30">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent text-center leading-tight pb-1">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent text-center leading-tight pb-1">
         Start Planning Your Meal!
       </h1>
-      <p className="text-lg text-center text-gray-400">
+      <p className="text-sm sm:text-base md:text-lg text-center text-gray-400 mb-4">
         Explore our wide range of delicious meal recipes.
       </p>
 
-      <div className="flex justify-center mt-4 gap-4 px-4 sm:px-8 md:px-16 lg:px-20">
-        <form onSubmit={handleSearch} className="flex items-center">
+      <div className="flex justify-center gap-2 sm:gap-4 px-4 sm:px-8 md:px-16 lg:px-20 w-full max-w-2xl">
+        <form
+          onSubmit={handleSearch}
+          className="flex items-center flex-1 max-w-md"
+        >
           <input
-            className="bg-white rounded-l border border-white px-4 py-2"
+            className="bg-white rounded-l border border-white px-3 sm:px-4 py-2 text-sm sm:text-base flex-1"
             type="text"
             placeholder="Search for meals..."
             value={searchQuery}
@@ -108,19 +111,19 @@ export default function Products() {
           />
           <button
             type="submit"
-            className="bg-amber-400 hover:bg-amber-500 border border-white border-l-0 px-3 py-2 transition-colors"
+            className="bg-amber-400 hover:bg-amber-500 border border-white border-l-0 px-2 sm:px-3 py-2 transition-colors"
           >
-            <Search size={24} className="text-white" />
+            <Search size={20} className="text-white sm:w-6 sm:h-6" />
           </button>
         </form>
         <button
           type="button"
           onClick={toggleSort}
-          className="bg-amber-400 hover:bg-amber-500 border border-white border-l-0 px-3 py-2 transition-colors flex items-center"
+          className="bg-amber-400 hover:bg-amber-500 border border-white px-3 py-2 transition-colors flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base flex-shrink-0"
           title={sortOrder === "asc" ? "Sort A-Z" : "Sort Z-A"}
         >
-          <ArrowUpDown size={20} className="text-white" />
-          <span className="text-white text-sm font-semibold">
+          <ArrowUpDown size={16} className="text-white sm:w-5 sm:h-5" />
+          <span className="text-white font-semibold">
             {sortOrder === "asc" ? "A-Z" : "Z-A"}
           </span>
         </button>
