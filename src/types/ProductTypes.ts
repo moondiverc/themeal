@@ -16,9 +16,9 @@ export interface MenuProps {
 }
 
 export interface FormState {
-  message: string
+  message: string;
   errors?: {
-    nameField?: string
-    priceField?: string
-  }
+    nameField?: string;
+    priceField?: string;
+  };
 }

@@ -1,12 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
-import Header from "./components/Header"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Products from "./pages/Products"
-import ProductDetail from "./pages/ProductDetail"
-import Contact from "./pages/Contact"
-import Favorites from './pages/Favorites'
-import Footer from './components/Footer'
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Contact from "./pages/Contact";
+import Favorites from "./pages/Favorites";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
