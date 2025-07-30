@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# React + TypeScript + Vite
+# TheMeal
 
-TheMeal adalah web berisi list Meal dari berbagai jenis di seluruh dunia
+TheMeal adalah web yang menyajikan berbagai makanan dan resep paling lengkap di seluruh dunia.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
