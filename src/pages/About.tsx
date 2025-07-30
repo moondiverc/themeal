@@ -7,7 +7,18 @@ import bgFood4 from '../assets/bg-food-4.jpg'
 import bgFood5 from '../assets/bg-food-5.jpg'
 
 export default function About() {
-    // Array foto makanan dari assets lokal
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    // metadata/doc title
+    useEffect(() => {
+        document.title = "TheMeal | About";
+        
+        return () => {
+            document.title = "The Meal";
+        };
+    }, []);
+    
+    // array image food
     const foodImages = [
         bgFood1,
         bgFood2,
@@ -15,9 +26,7 @@ export default function About() {
         bgFood4,
         bgFood5
     ];
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-
+    
     // auto-slide
     useEffect(() => {
         const interval = setInterval(() => {
@@ -51,7 +60,7 @@ export default function About() {
             </div>
 
             {/* carousel */}
-            <div className="flex justify-center py-8">
+            <div className="flex justify-center py-5">
                 <div className="max-w-4xl px-4 w-full">
                     <div className="relative overflow-hidden rounded-xl shadow-2xl">
                         {/* caontainer */}
@@ -88,7 +97,7 @@ export default function About() {
             </div>
 
             {/* more about us */}
-            <div className="flex justify-center py-5">
+            <div className="flex justify-center py-20">
                 <div className="max-w-4xl px-4 text-center justify-center bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                     <div>
                         <h1 className="text-3xl font-bold text-gray-800 mb-4">More About Us</h1>

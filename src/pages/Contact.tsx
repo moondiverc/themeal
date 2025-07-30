@@ -1,6 +1,16 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Contact() {
+    // metadata/doc title
+    useEffect(() => {
+        document.title = "TheMeal | Contact";
+        
+        return () => {
+            document.title = "The Meal";
+        };
+    }, []);
+
     return (
         <main className="flex justify-center py-5 pt-30" style={{ paddingInline: '5%' }}>
             <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center px-8 py-4 shadow-lg max-w-2xl  mx-4">

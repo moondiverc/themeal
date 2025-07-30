@@ -10,6 +10,15 @@ export default function Products() {
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
+    // metadata/doc title
+    useEffect(() => {
+        document.title = "TheMeal | Products";
+        
+        return () => {
+            document.title = "The Meal";
+        };
+    }, []);
+
     const getData = async (query: string = "") => {
         try {
             setLoading(true);
@@ -67,6 +76,7 @@ export default function Products() {
         );
     }
 
+    // menu ketika error
     if (error) {
         return (
             <div 
@@ -83,7 +93,7 @@ export default function Products() {
             <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent leading-tight pb-1">Start Planning Your Meal!</h1>
             <p className="text-lg text-gray-400">Explore our wide range of delicious meal options.</p>
 
-            <div className="flex justify-center mt-4 gap-2">
+            <div className="flex justify-center mt-4 gap-4" style={{ paddingInline : '3' }}>
                 <form onSubmit={handleSearch} className="flex items-center">
                     <input 
                         className="bg-white rounded-l border border-white px-4 py-2" 

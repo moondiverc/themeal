@@ -23,7 +23,7 @@ export default function ProductList({ items }: { items: ProductProps[] }) {
     setFavorites(favs.map((fav: ProductProps) => fav.idMeal));
   }, [items]);
 
-  // toggle untuk menambah atau menghapus meal dari daftar favorite
+  // toggle untuk like/unlike meal dari daftar favorite
   const toggleFavorite = (item: ProductProps) => {
     const isNowFavorite = isFavorite(item.idMeal);
 

@@ -19,8 +19,8 @@ export default function Home() {
                 minHeight: '100vh',
             }}>
                 <div className="py-5 px-[7%] max-w-240">
-                    <h1 className="text-5xl font-bold text-amber-50 text-shadow-md animate-fade-in opacity-0 animation-fill-forwards">
-                        Welcome to The<span className="text-amber-600">Meal</span>!
+                    <h1 className="text-5xl font-bold text-amber-50 animate-fade-in opacity-0 animation-fill-forwards">
+                        Welcome to <span className='font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent'>TheMeal!</span>
                     </h1>
                     <p className="text-2xl text-amber-100 text-shadow-2xs animate-fade-in opacity-0 animation-fill-forwards animation-delay-300">
                         Discover delicious meals and recipes from around the world.
