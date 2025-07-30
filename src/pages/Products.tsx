@@ -33,7 +33,7 @@ export default function Products() {
       const data = await response.json();
       setItems(data.meals ?? []);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+      setError(err instanceof Error ? err.message : "Error occurred");
     } finally {
       setLoading(false);
     }
@@ -90,17 +90,14 @@ export default function Products() {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 pt-30">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent leading-tight pb-1">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent text-center leading-tight pb-1">
         Start Planning Your Meal!
       </h1>
-      <p className="text-lg text-gray-400">
+      <p className="text-lg text-center text-gray-400">
         Explore our wide range of delicious meal recipes.
       </p>
 
-      <div
-        className="flex justify-center mt-4 gap-4"
-        style={{ paddingInline: "3%" }}
-      >
+      <div className="flex justify-center mt-4 gap-4 px-4 sm:px-8 md:px-16 lg:px-20">
         <form onSubmit={handleSearch} className="flex items-center">
           <input
             className="bg-white rounded-l border border-white px-4 py-2"
