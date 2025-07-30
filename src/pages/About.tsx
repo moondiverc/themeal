@@ -49,18 +49,18 @@ export default function About() {
     return (
         <div style={{padding: "0 8%"}}>
             {/* about TheMeal */}
-            <div className="flex justify-center p-10 pt-30 gap-10">
+            <div className="flex justify-center pb-5 pt-30 gap-10">
                 <div className="max-w-5xl px-4 justify-center flex flex-col lg:flex-row items-center gap-10">
                     <div className="text-center">
                         <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent pb-4">About TheMeal</h1>
                         <p className="text-lg text-gray-400">We are a company dedicated to providing the best meal experiences.</p>
-                        <p className="text-lg text-gray-400">Our mission is to bring delicious meals to your table with the highest quality ingredients and exceptional service.</p>
+                        <p className="text-lg text-gray-400">Our mission is to bring delicious meals to your table using only the highest quality ingredients, crafted with care, passion, and attention to detail.</p>
                     </div>
                 </div>
             </div>
 
             {/* carousel */}
-            <div className="flex justify-center py-5">
+            <div className="flex justify-center">
                 <div className="max-w-4xl px-4 w-full">
                     <div className="relative overflow-hidden rounded-xl shadow-2xl">
                         {/* caontainer */}
@@ -97,10 +97,10 @@ export default function About() {
             </div>
 
             {/* more about us */}
-            <div className="flex justify-center py-20">
+            <div className="flex justify-center py-30 pt-35">
                 <div className="max-w-4xl px-4 text-center justify-center bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-800 mb-4">More About Us</h1>
+                        <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">Why Choose Us?</h1>
                         <p className="text-lg text-gray-600 mb-6">We are a company dedicated to providing the best service possible.</p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-6 mb-4 flex-wrap text-center">

@@ -91,7 +91,7 @@ export default function Products() {
     return (
         <div className="flex flex-col items-center justify-center p-4 pt-30">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent leading-tight pb-1">Start Planning Your Meal!</h1>
-            <p className="text-lg text-gray-400">Explore our wide range of delicious meal options.</p>
+            <p className="text-lg text-gray-400">Explore our wide range of delicious meal recipes.</p>
 
             <div className="flex justify-center mt-4 gap-4" style={{ paddingInline : '3' }}>
                 <form onSubmit={handleSearch} className="flex items-center">

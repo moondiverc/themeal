@@ -35,7 +35,7 @@ export default function Home() {
             <div className="py-30 flex items-center" style={{ paddingInline: '10%' }}>
                 <div className="max-w-6xl mx-auto px-4 w-full">
                     <div className="text-center mb-12">
-                        <h1 className="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h1>
+                        <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-4">What Our Customers Say</h1>
                         <p className="text-xl text-gray-600">Hear from people who love TheMeal</p>
                     </div>
                     

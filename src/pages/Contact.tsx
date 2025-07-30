@@ -14,7 +14,7 @@ export default function Contact() {
     return (
         <main className="flex justify-center py-5 pt-30" style={{ paddingInline: '5%' }}>
             <div className="bg-white/80 backdrop-blur-sm rounded-lg text-center px-8 py-4 shadow-lg max-w-2xl  mx-4">
-                <div className="font-bold text-3xl text-gray-800 mb-2">Contact Us!</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent mb-2">Contact Us!</div>
                 <div className="text-lg text-gray-600 mb-8">We'd love to hear from you. Get in touch with us!</div>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-4">
